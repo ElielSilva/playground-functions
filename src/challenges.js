@@ -107,15 +107,71 @@ function fizzBuzz(lista) {
 // Desafio 9
 function encode(code) {
   // seu código aqui
-
+  // let code ="hello";
+  var palavra ='';
+  for (let letra of code) {
+    if (letra == 'a') {
+      palavra = palavra+'1'
+    }
+    else if (letra == 'e') {
+      palavra = palavra+'2'
+    }
+    else if (letra == 'i') {
+      palavra = palavra+'3'
+    }
+    else if (letra == 'o') {
+      palavra = palavra= palavra+'4'
+      
+    }
+    else if (letra == 'u') {
+      palavra = palavra+'5'
+    }
+    else if (letra == ' ') {
+      palavra = palavra+' '
+    }
+    else {
+      palavra = palavra+letra
+    };
+  }
+  return palavra
 }
-function decode() {
+function decode(code) {
   // seu código aqui
+  let palavra ='';
+  for (let letra of code) {
+    if (letra == '1') {
+      palavra = palavra+'a'
+    }
+    else if (letra == '2') {
+      palavra = palavra+'e'
+    }
+    else if (letra == '3') {
+      palavra = palavra+'i'
+    }
+    else if (letra == '4') {
+      palavra = palavra= palavra+'o'
+      
+    }
+    else if (letra == '5') {
+      palavra = palavra+'u'
+    }
+    else if (letra == ' ') {
+      palavra = palavra+' '
+    }
+    else {
+      palavra = palavra+letra
+    };
+  }
+  return palavra
 }
-
 // Desafio 10
 function techList(lista,name) {
   // seu código aqui
+  Array =[];
+  for (let novaTech of lista) {
+    Array.push({tech: novaTech,name: name})
+  }
+
 }
 
 module.exports = {
@@ -131,3 +187,4 @@ module.exports = {
   splitSentence,
   techList,
 };
+
