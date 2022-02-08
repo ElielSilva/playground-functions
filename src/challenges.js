@@ -82,37 +82,39 @@ function catAndMouse(mouse, cat1, cat2) {
 // Desafio 8
 function fizzBuzz(lista) {
   // seu código aqui
+  // let lista =[2, 15, 7, 9, 45];
   let result =[];
   for (let number of lista) {
-    if (number%3==0) {
+    if (number%3==0 && number %5==0) {
+      result.push("fizzBuzz")
+    }
+    else if (number%3==0) {
       result.push("fizz")
     }
-    else if (number%5==0) {
+    else if (number %5==0) {
+      // result.splice(result.length-1,1)
+      // result.splice(result.length-1,1)
       result.push("buzz")
-    }
-    else if (number%3==0 && number %5==0) {
-      result.splice(result.length-1,1)
-      result.splice(result.length-1,1)
-      result.push("fizzBuzz")
     }
     else {
       result.push("bug!")
     }
   }
+  // console.log(result);
   return result
 }
 
 // Desafio 9
 function encode(code) {
   // seu código aqui
-  
+
 }
 function decode() {
   // seu código aqui
 }
 
 // Desafio 10
-function techList() {
+function techList(lista,name) {
   // seu código aqui
 }
 
