@@ -10,15 +10,11 @@ function calcArea(base,height) {
 
 // Desafio 3
 function splitSentence(palavra) {
-  // seu código aqui
   return palavra.split(" ")
 }
 
 // Desafio 4
 function concatName(lista) {
-  // seu código aqui
-  // let lista = ['captain', 'my', 'captain'];
-  // console.log(lista[lista.length-1]+', '+lista[0]);
   return lista[lista.length-1]+', '+lista[0]
 }
 
@@ -81,8 +77,6 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 function fizzBuzz(lista) {
-  // seu código aqui
-  // let lista =[2, 15, 7, 9, 45];
   let result =[];
   for (let number of lista) {
     if (number%3==0 && number %5==0) {
@@ -92,15 +86,12 @@ function fizzBuzz(lista) {
       result.push("fizz")
     }
     else if (number %5==0) {
-      // result.splice(result.length-1,1)
-      // result.splice(result.length-1,1)
       result.push("buzz")
     }
     else {
       result.push("bug!")
     }
   }
-  // console.log(result);
   return result
 }
 
@@ -108,7 +99,7 @@ function fizzBuzz(lista) {
 function encode(code) {
   // seu código aqui
   // let code ="hello";
-  var palavra ='';
+  let palavra ='';
   for (let letra of code) {
     if (letra == 'a') {
       palavra = palavra+'1'
@@ -167,12 +158,52 @@ function decode(code) {
 // Desafio 10
 function techList(lista,name) {
   // seu código aqui
-  Array =[];
-  for (let novaTech of lista) {
-    Array.push({tech: novaTech,name: name})
+  if (lista.length == 0) {
+    return 'Vazio!'
   }
-
+  else {
+    let Array = [];
+    for (let novaTech of lista.sort()) {
+      Array.push({tech: novaTech,name: name})
+    }
+    return Array
+  }
 }
+function generatePhoneNumber (lista) {
+  for (let zero of lista) {
+    if (zero < 0 || zero > 9) {
+      return  "não é possível gerar um número de telefone com esses valores"
+    }
+  }
+  
+  if (lista.length > 11) {
+    return  "Array com tamanho incorreto."
+  }
+  // else if() {}
+  // else {
+    let ddd = "";
+  let primeiro = "";
+  let segundo = "";
+  for (let index = 0; index <2 ; index+=1) {
+    ddd = ddd+lista[index]
+  }
+  for (let index = 2; index <7 ; index+=1) {
+    primeiro = primeiro+lista[index]
+  }
+  for (let index = 7; index <11 ; index+=1) {
+    segundo = segundo+lista[index]
+    
+    return '('+ ddd +') '+primeiro+'-'+segundo
+}
+function testarNumberRepitido(array) {
+  let numberRepetido = 0;
+  
+}
+  
+
+
+
+
 
 module.exports = {
   calcArea,
