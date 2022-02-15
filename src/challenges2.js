@@ -35,22 +35,20 @@ function testarNumberRepitido(array) {
 // Desafio 12
 function triangleCheck() {
   // seu código aqui
+
 }
 
 // Desafio 13
 function hydrate(string) {
   // seu código aqui
-  let agua = "" ;
-  let lista = string.split(' ');
-  for (let x in lista)  {
-    if (x == "1" || x == "2" || x == "3" || x == "4" || x == "5" || x == "6" || x == "7" || x == "8" || ) {
-      agua = agua + x
-    }
-    else {
-      
-    }
+  let agua = 0;
+  let regex = /\d+/g;
+  let x = "you can enter 30%-20% maximum 500 choices";
+  let matches = x.match(regex);
+  for (let index = 2; index <matches.length ; index+=1) {
+    agua = agua+matches[index]
   }
-  return agua+' copo de água'
+  return agua.toString()+' copo de água'
 }
 
 module.exports = {
