@@ -1,17 +1,30 @@
 // Desafio 11
 function generatePhoneNumber(lista) {
   // seu código aqui
+  
+  if (lista.length != 11) {
+    return  "Array com tamanho incorreto."
+  }
   for (let zero of lista) {
     if (zero < 0 || zero > 9) {
       return  "não é possível gerar um número de telefone com esses valores"
     }
   }
   
-  if (lista.length > 11) {
-    return  "Array com tamanho incorreto."
+  let valor = true;
+  let contador = 0;
+  for (let x of lista)  {
+    for (let y of lista)  {
+      if (x===y) {
+        contador+=1; 
+      }
+    }
+    if (contador >= 3) {
+      return  'não é possível gerar um número de telefone com esses valores';
+    }
+    contador=0
   }
-  // else if() {}
-  // else {
+
   let ddd = "";
   let primeiro = "";
   let segundo = "";
@@ -23,32 +36,44 @@ function generatePhoneNumber(lista) {
   }
   for (let index = 7; index <11 ; index+=1) {
     segundo = segundo+lista[index]
-    
-    return '('+ ddd +') '+primeiro+'-'+segundo
+  }
+  return '('+ ddd +') '+primeiro+'-'+segundo
 }
-function testarNumberRepitido(array) {
-  let numberRepetido = 0;
-  
-}
-}
+
 
 // Desafio 12
-function triangleCheck() {
+function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
-
+  let a = Math.abs(lineA)
+  let b = Math.abs(lineB)
+  let c = Math.abs(lineC)
+  if (a>=b+c) {
+    return false
+  }
+  else if (b>=a+c) {
+    return false
+  }
+  else if (c>=b+a) {
+    return false
+  }else {
+    return true
+  }
 }
 
 // Desafio 13
 function hydrate(string) {
   // seu código aqui
-  let agua = 0;
-  let regex = /\d+/g;
-  let x = "you can enter 30%-20% maximum 500 choices";
-  let matches = x.match(regex);
-  for (let index = 2; index <matches.length ; index+=1) {
-    agua = agua+matches[index]
+  let numsStr = string.replace(/[^0-9]/g,'');
+  let lista = numsStr.split('')
+  console.log(lista);
+  let contador=0;
+  for (let iterator of lista) {
+    contador = contador+Math.abs(iterator)
   }
-  return agua.toString()+' copo de água'
+  if (contador == 1) {
+    return  contador.toString()+' copo de água'
+  }
+  return contador.toString()+' copos de água'
 }
 
 module.exports = {
